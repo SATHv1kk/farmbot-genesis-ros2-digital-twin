@@ -1,0 +1,7 @@
+[flake8]
+# Match the ament/ROS 2 convention enforced by ament_flake8 in colcon test,
+# so the standalone `flake8 src` CI step applies the same import-order style.
+import-order-style = google
+# I202 (blank lines inside an import group) is also ignored by ament_flake8;
+# ROS 2 launch files conventionally separate ament/launch/launch_ros imports.
+extend-ignore = I202

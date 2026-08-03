@@ -1,0 +1,69 @@
+name: FarmBot Genesis CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup ROS 2 Humble
+        uses: ros-tooling/setup-ros@v0.7
+        with:
+          required-ros-distributions: humble
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            python3-flake8 \
+            python3-flake8-blind-except \
+            python3-flake8-builtins \
+            python3-flake8-class-newline \
+            python3-flake8-comprehensions \
+            python3-flake8-deprecated \
+            python3-flake8-docstrings \
+            python3-flake8-import-order \
+            python3-flake8-quotes \
+            liburdfdom-tools
+          python3 -m pip install --user cmakelint
+
+      - name: Clean and build workspace
+        run: |
+          . /opt/ros/humble/setup.sh
+          rosdep update
+          rosdep install --from-paths src --ignore-src -r -y
+          colcon build --symlink-install
+
+      - name: Run tests
+        run: |
+          . /opt/ros/humble/setup.sh
+          . install/setup.sh
+          colcon test --event-handlers console_direct+
+          colcon test-result --verbose
+
+      - name: Lint CMake
+        run: |
+          . /opt/ros/humble/setup.sh
+          export PATH="$HOME/.local/bin:$PATH"
+          find src -name CMakeLists.txt -exec cmakelint {} \;
+
+      - name: Lint Python
+        run: |
+          . /opt/ros/humble/setup.sh
+          python3 -m flake8 src
+
+      - name: Check URDF
+        run: |
+          . /opt/ros/humble/setup.sh
+          . install/setup.sh
+          pkg_share=$(python3 -c "from ament_index_python.packages import get_package_share_directory; print(get_package_share_directory('farmbot_description'))")
+          check_urdf "${pkg_share}/farmbot_genesis.urdf"

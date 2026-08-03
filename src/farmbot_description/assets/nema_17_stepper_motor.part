@@ -1,0 +1,14 @@
+{
+    "configuration": "default",
+    "documentId": "728fa8fdb342a040fe0ca4b5",
+    "documentMicroversion": "abea79856133bb493392489d",
+    "documentVersion": "654cb04fafc6eede48f8c04d",
+    "elementId": "28cfdbe3e3486f21115f0240",
+    "fullConfiguration": "default",
+    "id": "MMImEMyKOpD3RdcBq",
+    "isStandardContent": false,
+    "name": "NEMA 17 Stepper Motor <1>",
+    "partId": "JHD",
+    "suppressed": false,
+    "type": "Part"
+}

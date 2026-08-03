@@ -1,0 +1,13 @@
+{
+    "configuration": "default",
+    "documentId": "6626b842adca229e69544ad1",
+    "documentMicroversion": "48ef077702f8b056d4eba927",
+    "elementId": "f8dc297f333efd824ec566a2",
+    "fullConfiguration": "default",
+    "id": "MfeVvIc8sac3ieEux",
+    "isStandardContent": false,
+    "name": "Soil Sensor <1>",
+    "partId": "JHD",
+    "suppressed": false,
+    "type": "Part"
+}

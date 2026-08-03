@@ -1,0 +1,19 @@
+{
+    "documentId": "af074be1790a0f567372e4fd",
+    "workspaceId": "59c9afe8f4d523552701f562",
+    "elementId": "3b072c92ea0892bc7dc55f17",
+    "outputFormat": "urdf",
+    "robotName": "farmbot_genesis",
+    "outputFilename": "farmbot_genesis",
+    "addDummyBaseLink": true,
+    "noDynamics": true,
+    "useFixedLinks": true,
+    "ignore": [
+        "Supporting Infrastructure"
+    ],
+    "dof": {
+        "Gantry Slider": "x",
+        "Cross-slide slider": "y",
+        "Z-axis slider": "z"
+    }
+}

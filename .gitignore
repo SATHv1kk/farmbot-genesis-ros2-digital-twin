@@ -1,0 +1,37 @@
+# Build artifacts
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Node.js
+node_modules/
+package-lock.json
+
+# Virtual environment (onshape-to-robot tools)
+onshape_env/
+
+# API credentials - DO NOT commit
+keys.sh
+
+# IDE / editors
+.vscode/
+.idea/
+
+# Local tool/editor settings
+.claude/
+
+# ROS
+*COLCON_IGNORE*
+DATA/
+
+# Generated TF tree dumps
+frames_*.gv
+frames_*.pdf
+
+# Vendored external repo (has its own .git; not part of this workspace's colcon build)
+FarmBot_ROS2/

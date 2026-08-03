@@ -1,0 +1,24 @@
+pilz_industrial_motion_planner:
+  planning_plugins:
+    - pilz_industrial_motion_planner::CommandPlanner
+  request_adapters: >-
+    default_planner_request_adapters/ResolveConstraintFrames
+    default_planner_request_adapters/FixWorkspaceBounds
+    default_planner_request_adapters/FixStartStateBounds
+    default_planner_request_adapters/FixStartStateCollision
+  default_planner_config: PTP
+  capabilities: >-
+    pilz_industrial_motion_planner/MoveGroupSequenceAction
+    pilz_industrial_motion_planner/MoveGroupSequenceService
+
+  gantry:
+    planner_configs:
+      - PTP
+      - LIN
+      - CIRC
+    PTP:
+      type: pilz_industrial_motion_planner::JointConfigurationPlanner
+    LIN:
+      type: pilz_industrial_motion_planner::JointConfigurationPlanner
+    CIRC:
+      type: pilz_industrial_motion_planner::JointConfigurationPlanner

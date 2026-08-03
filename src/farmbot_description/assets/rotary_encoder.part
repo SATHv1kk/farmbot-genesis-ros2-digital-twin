@@ -1,0 +1,14 @@
+{
+    "configuration": "default",
+    "documentId": "728fa8fdb342a040fe0ca4b5",
+    "documentMicroversion": "abea79856133bb493392489d",
+    "documentVersion": "654cb04fafc6eede48f8c04d",
+    "elementId": "28cfdbe3e3486f21115f0240",
+    "fullConfiguration": "default",
+    "id": "M819bxOLXkVAhc1P9",
+    "isStandardContent": false,
+    "name": "Rotary Encoder <1>",
+    "partId": "RIED",
+    "suppressed": false,
+    "type": "Part"
+}

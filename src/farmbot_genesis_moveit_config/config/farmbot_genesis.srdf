@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="farmbot_genesis">
+  <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="base_link"/>
+
+  <group name="gantry">
+    <joint name="x_axis_joint"/>
+    <joint name="y_axis_joint"/>
+    <joint name="z_axis_joint"/>
+  </group>
+
+  <end_effector name="tool" parent_link="tool_link" group="gantry"/>
+
+  <!-- The consolidated axis links are permanently interlocked (wheels on
+       tracks, cable carriers spanning axes), so mesh-level self-collision
+       between them is always present by design and must be disabled. -->
+  <disable_collisions link1="supporting_infrastructure" link2="x_axis_link" reason="Adjacent"/>
+  <disable_collisions link1="supporting_infrastructure" link2="y_axis_link" reason="Default"/>
+  <disable_collisions link1="supporting_infrastructure" link2="z_axis_link" reason="Default"/>
+  <disable_collisions link1="x_axis_link" link2="y_axis_link" reason="Adjacent"/>
+  <disable_collisions link1="x_axis_link" link2="z_axis_link" reason="Default"/>
+  <disable_collisions link1="y_axis_link" link2="z_axis_link" reason="Adjacent"/>
+
+  <group_state name="home" group="gantry">
+    <joint name="x_axis_joint" value="0"/>
+    <joint name="y_axis_joint" value="0"/>
+    <joint name="z_axis_joint" value="0"/>
+  </group_state>
+</robot>

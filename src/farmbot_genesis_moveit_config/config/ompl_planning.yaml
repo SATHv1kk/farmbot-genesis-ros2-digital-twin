@@ -1,0 +1,76 @@
+planner_configs:
+  SBL:
+    type: geometric::SBL
+  EST:
+    type: geometric::EST
+  LBKPIECE:
+    type: geometric::LBKPIECE
+  BKPIECE:
+    type: geometric::BKPIECE
+  KPIECE:
+    type: geometric::KPIECE
+  RRT:
+    type: geometric::RRT
+  RRTConnect:
+    type: geometric::RRTConnect
+  RRTstar:
+    type: geometric::RRTstar
+  TRRT:
+    type: geometric::TRRT
+  PRM:
+    type: geometric::PRM
+  PRMstar:
+    type: geometric::PRMstar
+  FMT:
+    type: geometric::FMT
+  BFMT:
+    type: geometric::BFMT
+  PDST:
+    type: geometric::PDST
+  STRIDE:
+    type: geometric::STRIDE
+  BiTRRT:
+    type: geometric::BiTRRT
+  LBTRRT:
+    type: geometric::LBTRRT
+  BiEST:
+    type: geometric::BiEST
+  ProjEST:
+    type: geometric::ProjEST
+  LazyPRM:
+    type: geometric::LazyPRM
+  LazyPRMstar:
+    type: geometric::LazyPRMstar
+  SPARS:
+    type: geometric::SPARS
+  SPARStwo:
+    type: geometric::SPARStwo
+
+gantry:
+  default_planner_config: RRTConnect
+  planner_configs:
+    - SBL
+    - EST
+    - LBKPIECE
+    - BKPIECE
+    - KPIECE
+    - RRT
+    - RRTConnect
+    - RRTstar
+    - TRRT
+    - PRM
+    - PRMstar
+    - FMT
+    - BFMT
+    - PDST
+    - STRIDE
+    - BiTRRT
+    - LBTRRT
+    - BiEST
+    - ProjEST
+    - LazyPRM
+    - LazyPRMstar
+    - SPARS
+    - SPARStwo
+  projection_evaluator: joints(x_axis_joint, y_axis_joint)
+  longest_valid_segment_fraction: 0.005

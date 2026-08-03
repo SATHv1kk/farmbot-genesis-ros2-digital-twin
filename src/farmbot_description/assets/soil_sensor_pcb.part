@@ -1,0 +1,13 @@
+{
+    "configuration": "default",
+    "documentId": "6626b842adca229e69544ad1",
+    "documentMicroversion": "48ef077702f8b056d4eba927",
+    "elementId": "6fdb9c0dc0d864c8b23ad7b7",
+    "fullConfiguration": "default",
+    "id": "Mfc7jaqzUl2PdDwx+",
+    "isStandardContent": false,
+    "name": "Soil Sensor PCB <1>",
+    "partId": "JHD",
+    "suppressed": false,
+    "type": "Part"
+}

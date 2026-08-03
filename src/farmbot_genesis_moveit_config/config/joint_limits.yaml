@@ -1,0 +1,35 @@
+# Cartesian speed cap for the Pilz LIN/CIRC planners. Conservatively matched
+# to the slowest joint (z_axis_joint) so no per-joint limit below can be
+# exceeded regardless of travel direction; there is no rotational DOF, so
+# max_rot_vel is a nominal small placeholder required by the planner.
+cartesian_limits:
+  max_trans_vel: 0.02
+  max_trans_acc: 0.5
+  max_trans_dec: -0.5
+  max_rot_vel: 0.1
+
+joint_limits:
+  x_axis_joint:
+    has_velocity_limits: true
+    max_velocity: 0.1
+    has_acceleration_limits: true
+    max_acceleration: 1.0
+    has_position_limits: true
+    min_position: 0.0
+    max_position: 2.7
+  y_axis_joint:
+    has_velocity_limits: true
+    max_velocity: 0.1
+    has_acceleration_limits: true
+    max_acceleration: 1.0
+    has_position_limits: true
+    min_position: 0.0
+    max_position: 1.3
+  z_axis_joint:
+    has_velocity_limits: true
+    max_velocity: 0.02
+    has_acceleration_limits: true
+    max_acceleration: 0.5
+    has_position_limits: true
+    min_position: -0.4
+    max_position: 0.0
